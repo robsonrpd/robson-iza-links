@@ -27,18 +27,18 @@ const links = [
     label: "Entrar no clube",
   },
   {
-    title: "Acompanhe no TikTok",
-    description: "Conteúdo direto sobre consórcio, estratégia e oportunidades.",
-    href: "https://www.tiktok.com/@robsoniza1?_r=1&_t=ZS-99vDZC5mgS7",
-    icon: Music2,
-    label: "@robsoniza1",
-  },
-  {
     title: "Faça a sua simulação",
     description: "Descubra o plano ideal para o seu imóvel, veículo ou investimento.",
     href: "https://www.ademicon.com.br/licensed/864872/robson-carvalheira?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaftl0ED_5Me7MuHSTygbi_uMLGycVHRZa0KaAkaBGmDIWX240cyCEEyEVbZvg_aem_-xOyt1cPpAdT2eloXG5PCw",
     icon: Calculator,
     label: "Simular agora",
+  },
+  {
+    title: "Acompanhe no TikTok",
+    description: "Conteúdo direto sobre consórcio, estratégia e oportunidades.",
+    href: "https://www.tiktok.com/@robsoniza1?_r=1&_t=ZS-99vDZC5mgS7",
+    icon: Music2,
+    label: "@robsoniza1",
   },
 ];
 

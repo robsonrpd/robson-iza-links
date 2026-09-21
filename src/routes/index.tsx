@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Calculator, MessageCircle, Music2 } from "lucide-react";
-import logoAsset from "@/assets/robson-iza-logo.png.asset.json";
 import portraitAsset from "@/assets/robson-iza-bracos-cruzados.png.asset.json";
 import bannerAsset from "@/assets/robson-iza-banner.png.asset.json";
 

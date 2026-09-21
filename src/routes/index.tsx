@@ -95,9 +95,8 @@ function Index() {
             })}
           </div>
 
-          <div className="mt-6 hidden grid-cols-2 gap-3 lg:grid">
-            <img src={standingAsset.url} alt="Robson Iza em pé" className="h-28 w-full rounded-md object-cover object-[center_20%] opacity-80" />
-            <img src={seatedAsset.url} alt="Robson Iza sentado" className="h-28 w-full rounded-md object-cover object-[center_25%] opacity-80" />
+          <div className="mt-6 overflow-hidden rounded-md border border-border">
+            <img src={bannerAsset.url} alt="O consórcio que mais cresce no Brasil — Robson Iza" className="block w-full object-cover" />
           </div>
 
           <p className="mt-7 text-center text-xs text-muted-foreground">© 2026 Robson Iza · Todos os direitos reservados</p>

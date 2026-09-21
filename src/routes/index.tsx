@@ -75,7 +75,7 @@ function Index() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className={`animate-entrance group flex min-h-28 items-center gap-4 rounded-md border p-4 transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${link.featured ? "border-primary bg-primary text-primary-foreground shadow-xl shadow-primary/20" : "border-border bg-surface-raised text-foreground hover:border-primary/70"}`}
+                  className={`btn-link animate-entrance group flex min-h-28 items-center gap-4 rounded-md border p-4 transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${link.featured ? "border-primary bg-primary text-primary-foreground shadow-xl shadow-primary/20" : "border-border bg-surface-raised text-foreground hover:border-primary/70"}`}
                   style={{ animationDelay: `${120 + index * 90}ms` }}
                 >
                   <span className={`flex size-12 shrink-0 items-center justify-center rounded-full ${link.featured ? "bg-primary-foreground/15" : "bg-primary/15 text-brand-bright"}`}>

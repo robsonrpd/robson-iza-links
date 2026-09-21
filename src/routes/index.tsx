@@ -48,9 +48,9 @@ function Index() {
       <div aria-hidden="true" className="absolute inset-x-0 top-0 h-96 bg-[radial-gradient(circle_at_70%_0%,var(--color-primary),transparent_62%)] opacity-45" />
       <div aria-hidden="true" className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-primary/50 to-transparent md:left-[calc(50%-25rem)]" />
 
-      <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pb-10 pt-8 sm:px-8 lg:grid lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14 lg:py-12">
+      <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pb-10 pt-3 sm:px-8 sm:pt-8 lg:grid lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14 lg:py-12">
         <section className="animate-entrance flex flex-col items-center text-center lg:items-start lg:text-left">
-          <div className="relative h-64 w-full max-w-sm overflow-hidden rounded-md border border-primary/25 bg-card sm:h-80 lg:h-[25rem]">
+          <div className="relative h-72 w-full max-w-sm overflow-hidden rounded-md border border-primary/25 bg-card sm:h-80 lg:h-[25rem]">
             <img src={portraitAsset.url} alt="Robson Iza" className="h-full w-full object-cover object-top" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/65 to-transparent px-5 pb-5 pt-20 text-left">
               <p className="text-xs font-extrabold uppercase text-brand-bright">Especialista em consórcio</p>

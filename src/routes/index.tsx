@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Calculator, MessageCircle, Music2 } from "lucide-react";
 import logoAsset from "@/assets/robson-iza-logo.png.asset.json";
 import portraitAsset from "@/assets/robson-iza-bracos-cruzados.png.asset.json";
-import seatedAsset from "@/assets/robson-iza-sentado.png.asset.json";
-import standingAsset from "@/assets/robson-iza-em-pe.png.asset.json";
+import bannerAsset from "@/assets/robson-iza-banner.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,11 +61,6 @@ function Index() {
               <p className="mt-1 text-sm font-semibold text-brand-soft">O Pai do Consórcio</p>
             </div>
           </div>
-
-          <div className="mt-3 hidden w-full max-w-sm grid-cols-2 gap-3 sm:grid lg:hidden">
-            <img src={standingAsset.url} alt="Robson Iza em pé" className="h-28 w-full rounded-md object-cover object-top" />
-            <img src={seatedAsset.url} alt="Robson Iza sentado" className="h-28 w-full rounded-md object-cover object-top" />
-          </div>
         </section>
 
         <section className="mt-8 lg:mt-0">
@@ -101,9 +95,8 @@ function Index() {
             })}
           </div>
 
-          <div className="mt-6 hidden grid-cols-2 gap-3 lg:grid">
-            <img src={standingAsset.url} alt="Robson Iza em pé" className="h-28 w-full rounded-md object-cover object-[center_20%] opacity-80" />
-            <img src={seatedAsset.url} alt="Robson Iza sentado" className="h-28 w-full rounded-md object-cover object-[center_25%] opacity-80" />
+          <div className="mt-6 overflow-hidden rounded-md border border-border">
+            <img src={bannerAsset.url} alt="O consórcio que mais cresce no Brasil — Robson Iza" className="block w-full object-cover" />
           </div>
 
           <p className="mt-7 text-center text-xs text-muted-foreground">© 2026 Robson Iza · Todos os direitos reservados</p>

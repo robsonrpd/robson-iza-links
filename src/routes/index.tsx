@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Calculator, MessageCircle, Music2 } from "lucide-react";
-import logoAsset from "@/assets/robson-iza-logo.png.asset.json";
 import portraitAsset from "@/assets/robson-iza-bracos-cruzados.png.asset.json";
 import bannerAsset from "@/assets/robson-iza-banner.png.asset.json";
 
@@ -28,18 +27,18 @@ const links = [
     label: "Entrar no clube",
   },
   {
-    title: "Acompanhe no TikTok",
-    description: "Conteúdo direto sobre consórcio, estratégia e oportunidades.",
-    href: "https://www.tiktok.com/@robsoniza1?_r=1&_t=ZS-99vDZC5mgS7",
-    icon: Music2,
-    label: "@robsoniza1",
-  },
-  {
     title: "Faça a sua simulação",
     description: "Descubra o plano ideal para o seu imóvel, veículo ou investimento.",
     href: "https://www.ademicon.com.br/licensed/864872/robson-carvalheira?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaftl0ED_5Me7MuHSTygbi_uMLGycVHRZa0KaAkaBGmDIWX240cyCEEyEVbZvg_aem_-xOyt1cPpAdT2eloXG5PCw",
     icon: Calculator,
     label: "Simular agora",
+  },
+  {
+    title: "Acompanhe no TikTok",
+    description: "Conteúdo direto sobre consórcio, estratégia e oportunidades.",
+    href: "https://www.tiktok.com/@robsoniza1?_r=1&_t=ZS-99vDZC5mgS7",
+    icon: Music2,
+    label: "@robsoniza1",
   },
 ];
 
@@ -51,9 +50,7 @@ function Index() {
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pb-10 pt-8 sm:px-8 lg:grid lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14 lg:py-12">
         <section className="animate-entrance flex flex-col items-center text-center lg:items-start lg:text-left">
-          <img src={logoAsset.url} alt="Robson Iza, O Pai do Consórcio" className="h-auto w-52 rounded-md bg-foreground object-contain p-2 sm:w-60" />
-
-          <div className="relative mt-7 h-64 w-full max-w-sm overflow-hidden rounded-md border border-primary/25 bg-card sm:h-80 lg:h-[25rem]">
+          <div className="relative h-64 w-full max-w-sm overflow-hidden rounded-md border border-primary/25 bg-card sm:h-80 lg:h-[25rem]">
             <img src={portraitAsset.url} alt="Robson Iza" className="h-full w-full object-cover object-top" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/65 to-transparent px-5 pb-5 pt-20 text-left">
               <p className="text-xs font-extrabold uppercase text-brand-bright">Especialista em consórcio</p>
@@ -78,7 +75,7 @@ function Index() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className={`animate-entrance group flex min-h-28 items-center gap-4 rounded-md border p-4 transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${link.featured ? "border-primary bg-primary text-primary-foreground shadow-xl shadow-primary/20" : "border-border bg-surface-raised text-foreground hover:border-primary/70"}`}
+                  className={`btn-link animate-entrance group flex min-h-28 items-center gap-4 rounded-md border p-4 transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${link.featured ? "border-primary bg-primary text-primary-foreground shadow-xl shadow-primary/20" : "border-border bg-surface-raised text-foreground hover:border-primary/70"}`}
                   style={{ animationDelay: `${120 + index * 90}ms` }}
                 >
                   <span className={`flex size-12 shrink-0 items-center justify-center rounded-full ${link.featured ? "bg-primary-foreground/15" : "bg-primary/15 text-brand-bright"}`}>

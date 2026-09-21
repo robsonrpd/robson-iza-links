@@ -160,10 +160,42 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes shine {
+  0% { transform: translateX(-130%) skewX(-14deg); }
+  100% { transform: translateX(230%) skewX(-14deg); }
+}
+
 @utility animate-entrance {
   animation: entrance 560ms ease-out both;
 }
 
+@utility btn-link {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 45%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-foreground) 22%, transparent),
+      transparent
+    );
+    transform: translateX(-130%) skewX(-14deg);
+    pointer-events: none;
+  }
+
+  &:hover::before {
+    animation: shine 0.8s ease-out;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-entrance { animation: none; }
+  .btn-link::before { display: none; }
 }

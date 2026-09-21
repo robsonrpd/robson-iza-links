@@ -59,29 +59,39 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-bright: var(--brand-bright);
+  --color-brand-soft: var(--brand-soft);
+  --color-surface-raised: var(--surface-raised);
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Manrope", sans-serif;
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.75rem;
+  --background: oklch(0.13 0.018 25);
+  --foreground: oklch(0.98 0.006 28);
+  --card: oklch(0.19 0.025 25);
+  --card-foreground: oklch(0.98 0.006 28);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.61 0.255 27);
+  --primary-foreground: oklch(0.99 0.003 28);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
+  --muted: oklch(0.24 0.025 26);
+  --muted-foreground: oklch(0.76 0.018 28);
   --accent: oklch(0.968 0.007 247.896);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.35 0.055 27);
+  --input: oklch(0.35 0.055 27);
+  --ring: oklch(0.64 0.255 27);
+  --brand-deep: oklch(0.30 0.135 25);
+  --brand-bright: oklch(0.65 0.275 27);
+  --brand-soft: oklch(0.92 0.055 25);
+  --surface-raised: oklch(0.18 0.025 25 / 88%);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +150,20 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    margin: 0;
   }
+}
+
+@keyframes entrance {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-entrance {
+  animation: entrance 560ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-entrance { animation: none; }
 }

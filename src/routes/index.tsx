@@ -61,11 +61,6 @@ function Index() {
               <p className="mt-1 text-sm font-semibold text-brand-soft">O Pai do Consórcio</p>
             </div>
           </div>
-
-          <div className="mt-3 hidden w-full max-w-sm grid-cols-2 gap-3 sm:grid lg:hidden">
-            <img src={standingAsset.url} alt="Robson Iza em pé" className="h-28 w-full rounded-md object-cover object-top" />
-            <img src={seatedAsset.url} alt="Robson Iza sentado" className="h-28 w-full rounded-md object-cover object-top" />
-          </div>
         </section>
 
         <section className="mt-8 lg:mt-0">

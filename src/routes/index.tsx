@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Calculator, MessageCircle, Music2 } from "lucide-react";
-import portraitAsset from "@/assets/robson-iza-bracos-cruzados.png.asset.json";
-import bannerAsset from "@/assets/robson-iza-banner.png.asset.json";
+const portraitSrc = "/img/robson-iza-bracos-cruzados.jpg";
+const bannerSrc = "/img/robson-iza-banner.jpg";
+const logoSrc = "/img/robson-iza-logo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,8 +51,15 @@ function Index() {
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pb-10 pt-3 sm:px-8 sm:pt-8 lg:grid lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14 lg:py-12">
         <section className="animate-entrance flex flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="mb-4 flex w-full max-w-sm justify-center lg:justify-start">
+            <img
+              src={logoSrc}
+              alt="Robson Iza — O Pai do Consórcio"
+              className="size-32 rounded-2xl border border-primary/30 bg-white object-contain p-2 shadow-xl shadow-primary/15 sm:size-36"
+            />
+          </div>
           <div className="relative h-72 w-full max-w-sm overflow-hidden rounded-md border border-primary/25 bg-card sm:h-80 lg:h-[25rem]">
-            <img src={portraitAsset.url} alt="Robson Iza" className="h-full w-full object-cover object-top" />
+            <img src={portraitSrc} alt="Robson Iza" className="h-full w-full object-cover object-top" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/65 to-transparent px-5 pb-5 pt-20 text-left">
               <p className="text-xs font-extrabold uppercase text-brand-bright">Especialista em consórcio</p>
               <h1 className="mt-1 font-display text-3xl font-extrabold text-foreground">Robson Iza</h1>
@@ -93,7 +101,7 @@ function Index() {
           </div>
 
           <div className="mt-6 overflow-hidden rounded-md border border-border">
-            <img src={bannerAsset.url} alt="O consórcio que mais cresce no Brasil — Robson Iza" className="block w-full object-cover" />
+            <img src={bannerSrc} alt="O consórcio que mais cresce no Brasil — Robson Iza" className="block w-full object-cover" />
           </div>
 
           <p className="mt-7 text-center text-xs text-muted-foreground">© 2026 Robson Iza · Todos os direitos reservados</p>

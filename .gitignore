@@ -30,3 +30,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Fotos originais em alta resolucao (~18 MB) — fonte local, nao versionada.
+# As versoes otimizadas para web ficam em public/img/ e essas sim sao versionadas.
+public/Fotos/
+
+# Lockfile do npm — o projeto usa bun (bun.lock) como fonte de verdade.
+package-lock.json
+
+# Claude Code — preferencias locais de permissao
+.claude/settings.local.json

@@ -22,6 +22,7 @@ Use **npm** (há `package-lock.json`, versionado para o CI ser reproduzível).
 - Tailwind CSS v4 (tokens em `src/styles.css`, sem `tailwind.config.js`)
 - shadcn/ui + Radix + lucide-react
 - Deploy: GitHub Actions → GitHub Pages (`.github/workflows/deploy.yml`)
+- Domínio: https://robsonizaopaidoconsorcio.com.br (HTTPS forçado; `www` redireciona)
 
 ## Convenções essenciais
 
@@ -35,13 +36,21 @@ Use **npm** (há `package-lock.json`, versionado para o CI ser reproduzível).
   (`bg-[#...]`, `text-white`, `bg-black`). Exceção documentada: o tile da
   logomarca em `index.tsx` usa `bg-white` porque o arquivo da logo tem fundo
   branco puro e qualquer outro tom criaria uma emenda visível.
-- **Imagens**: versões web em `public/img/`, referenciadas por caminho relativo
-  (`"img/arquivo.jpg"`, sem barra inicial — a `base` do Vite é `"./"`).
+- **Imagens**: versões web em `public/img/`, referenciadas ancoradas na base:
+  `` `${import.meta.env.BASE_URL}img/arquivo.jpg` ``. Não use caminho relativo
+  (`"img/arquivo.jpg"`) nem absoluto fixo (`"/img/arquivo.jpg"`) — o primeiro
+  quebra se a rota tiver subcaminho, o segundo quebra fora da raiz.
   Originais em `fotos-originais/`, fora de `public/` e fora do Git.
-- **Base relativa**: `base: "./"` no `vite.config.ts` faz o site funcionar tanto
-  em `robsonrpd.github.io/robson-iza-links/` quanto num domínio próprio na raiz.
-  Não troque para `"/"` sem conferir os dois cenários.
+- **Base e basepath**: `base` no `vite.config.ts` vem de `VITE_BASE_PATH` (lido
+  com `loadEnv` — o Vite **não** injeta o `.env` no `process.env` do próprio
+  config). Precisa ser absoluta e terminar em `/`. O router recebe
+  `basepath: import.meta.env.BASE_URL`; **sem isso o site serve tudo com 200 e
+  ainda assim renderiza o 404**, porque a URL não casa com a rota `/`. Hoje o
+  valor é `/` (domínio próprio); servindo por
+  `robsonrpd.github.io/robson-iza-links` seria `/robson-iza-links/`.
 - **Variáveis de ambiente**: só `import.meta.env.VITE_*` (não há servidor).
+  `VITE_SITE_URL` e `VITE_BASE_PATH` existem em **dois** lugares — [`.env`](.env)
+  e o workflow — e precisam bater.
 
 ## Páginas
 

@@ -33,13 +33,10 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Ao conectar o dominio proprio, troque aqui e no .env para
-          # https://robsonizaopaidoconsorcio.com.br — e o que alimenta as
-          # meta tags de preview do WhatsApp.
-          VITE_SITE_URL: https://robsonrpd.github.io/robson-iza-links
-          # Subdiretorio em que o GitHub Pages serve o repo. Num dominio
-          # proprio, passa a ser "/".
-          VITE_BASE_PATH: /robson-iza-links/
+          # Alimenta as meta tags de preview do WhatsApp (og:image, og:url).
+          VITE_SITE_URL: https://robsonizaopaidoconsorcio.com.br
+          # Dominio proprio serve na raiz.
+          VITE_BASE_PATH: /
 
       - uses: actions/configure-pages@v5
 

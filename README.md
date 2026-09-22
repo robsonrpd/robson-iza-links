@@ -3,7 +3,7 @@
 Página de links de **Robson Iza, O Pai do Consórcio**.
 
 Site estático, hospedado no GitHub Pages:
-https://robsonrpd.github.io/robson-iza-links
+https://robsonizaopaidoconsorcio.com.br
 
 ## Desenvolvimento
 
@@ -30,16 +30,20 @@ e publica no GitHub Pages.
 
 Para ativar (uma vez só): **Settings → Pages → Source: GitHub Actions**.
 
-### Conectar o domínio próprio
+### Domínio próprio
 
-1. Crie `public/CNAME` com uma linha: `robsonizaopaidoconsorcio.com.br`
-2. No DNS do domínio, aponte para o GitHub Pages:
-   - `A` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - ou `CNAME` do `www` → `robsonrpd.github.io`
-3. Troque `VITE_SITE_URL` no [`.env`](.env) e no workflow para
-   `https://robsonizaopaidoconsorcio.com.br` — é o que alimenta o preview do
-   WhatsApp.
-4. **Settings → Pages → Custom domain**, e marque *Enforce HTTPS*.
+Já configurado. O domínio `robsonizaopaidoconsorcio.com.br` aponta para o GitHub
+Pages via Registro.br (4 registros `A`, 4 `AAAA` e um `CNAME` do `www`), e
+[`public/CNAME`](public/CNAME) informa o domínio ao GitHub.
+
+Se um dia voltar a servir pelo endereço do GitHub (`robsonrpd.github.io/robson-iza-links`),
+troque nos **dois** lugares — [`.env`](.env) e o workflow:
+
+- `VITE_BASE_PATH` → `/robson-iza-links/`
+- `VITE_SITE_URL` → `https://robsonrpd.github.io/robson-iza-links`
+
+As duas precisam bater: a primeira alimenta os caminhos dos arquivos e o
+basepath do roteador, a segunda as meta tags de preview do WhatsApp.
 
 ## Imagens
 

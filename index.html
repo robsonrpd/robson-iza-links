@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Robson Iza — O Pai do Consórcio</title>
+    <meta
+      name="description"
+      content="Entre para o Clube O Pai do Consórcio, acompanhe no TikTok ou faça sua simulação."
+    />
+    <meta name="author" content="Robson Iza" />
+    <meta name="theme-color" content="#0a0505" />
+    <link rel="icon" href="./favicon.png" type="image/png" />
+
+    <!-- Open Graph / WhatsApp / Facebook.
+         Duas exigencias, ambas atendidas aqui:
+         1. As tags precisam estar no HTML estatico — os robos de preview nao
+            executam JavaScript, entao meta tags injetadas pelo React nunca
+            chegam ate eles.
+         2. og:image precisa ser URL ABSOLUTA — com caminho relativo o preview
+            do WhatsApp sai sem miniatura. O %VITE_SITE_URL% e substituido no
+            build (definido em .env, sobrescrito no deploy). -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Robson Iza" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:title" content="Robson Iza — O Pai do Consórcio" />
+    <meta
+      property="og:description"
+      content="Consórcio para quem quer comprar, investir e lucrar com estratégia."
+    />
+    <meta property="og:image" content="%VITE_SITE_URL%/img/og-robson-iza.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Robson Iza — O consórcio que mais cresce no Brasil" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Robson Iza — O Pai do Consórcio" />
+    <meta
+      name="twitter:description"
+      content="Consórcio para quem quer comprar, investir e lucrar com estratégia."
+    />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/img/og-robson-iza.jpg" />
+
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

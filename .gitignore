@@ -31,12 +31,14 @@ dist-ssr
 *.sln
 *.sw?
 
-# Fotos originais em alta resolucao (~18 MB) — fonte local, nao versionada.
-# As versoes otimizadas para web ficam em public/img/ e essas sim sao versionadas.
-public/Fotos/
+# Build
+dist
 
-# Lockfile do npm — o projeto usa bun (bun.lock) como fonte de verdade.
-package-lock.json
+# Fotos originais em alta resolucao (~18 MB) — fonte local, nao versionada.
+# Ficam FORA de public/ de proposito: tudo em public/ e copiado para o build.
+# As versoes otimizadas para web ficam em public/img/ e essas sim sao versionadas.
+fotos-originais/
+
 
 # Claude Code — preferencias locais de permissao
 .claude/settings.local.json

@@ -1,0 +1,11 @@
+# Normaliza fim de linha para LF no repositorio e na arvore de trabalho.
+# Sem isso, o Git no Windows entrega CRLF e o Prettier acusa erro em toda linha
+# de todo arquivo (~4.500 erros de lint que nao dizem nada).
+* text=auto eol=lf
+
+# Binarios nunca sao convertidos.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.webp binary

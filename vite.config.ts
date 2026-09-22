@@ -1,15 +1,37 @@
-// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins:
-//   - TanStack devtools (dev-only, first), tanstackStart, viteReact, tailwindcss, tsConfigPaths,
-//     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
-//     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import { tanstackRouter } from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
+  // Base relativa para o site funcionar tanto em
+  // robsonrpd.github.io/robson-iza-links/ quanto num dominio proprio na raiz,
+  // sem precisar reconfigurar nada ao conectar o dominio.
+  base: "./",
+
+  // Resolucao do alias @/* -> ./src/* direto do tsconfig (nativo no Vite 8,
+  // dispensa o plugin vite-tsconfig-paths).
+  resolve: { tsconfigPaths: true },
+
+  plugins: [
+    // Precisa vir antes do plugin do React: ele gera o routeTree.gen.ts a
+    // partir dos arquivos em src/routes/.
+    tanstackRouter({ target: "react", autoCodeSplitting: true }),
+    react(),
+    tailwindcss(),
+  ],
+
+  server: {
+    port: 8080,
+    host: true,
+  },
+
+  preview: {
+    port: 8080,
+  },
+
+  build: {
+    outDir: "dist",
+    sourcemap: false,
   },
 });

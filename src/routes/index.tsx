@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Calculator, MessageCircle, Music2 } from "lucide-react";
-const portraitSrc = "img/robson-iza-bracos-cruzados.jpg";
-const bannerSrc = "img/robson-iza-banner.jpg";
-const logoSrc = "img/robson-iza-logo.jpg";
+const portraitSrc = `${import.meta.env.BASE_URL}img/robson-iza-bracos-cruzados.jpg`;
+const bannerSrc = `${import.meta.env.BASE_URL}img/robson-iza-banner.jpg`;
+const logoSrc = `${import.meta.env.BASE_URL}img/robson-iza-logo.jpg`;
 
 export const Route = createFileRoute("/")({
   component: Index,

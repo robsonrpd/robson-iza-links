@@ -37,6 +37,9 @@ jobs:
           # https://robsonizaopaidoconsorcio.com.br — e o que alimenta as
           # meta tags de preview do WhatsApp.
           VITE_SITE_URL: https://robsonrpd.github.io/robson-iza-links
+          # Subdiretorio em que o GitHub Pages serve o repo. Num dominio
+          # proprio, passa a ser "/".
+          VITE_BASE_PATH: /robson-iza-links/
 
       - uses: actions/configure-pages@v5
 

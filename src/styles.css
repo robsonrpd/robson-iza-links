@@ -88,7 +88,7 @@
   --border: oklch(0.35 0.055 27);
   --input: oklch(0.35 0.055 27);
   --ring: oklch(0.64 0.255 27);
-  --brand-deep: oklch(0.30 0.135 25);
+  --brand-deep: oklch(0.3 0.135 25);
   --brand-bright: oklch(0.65 0.275 27);
   --brand-soft: oklch(0.92 0.055 25);
   --surface-raised: oklch(0.18 0.025 25 / 88%);
@@ -156,13 +156,28 @@
 }
 
 @keyframes entrance {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* O brilho varre em ~16% do ciclo e o resto e pausa, para o efeito chamar
+   atencao sem virar poluicao visual. */
 @keyframes shine {
-  0% { transform: translateX(-130%) skewX(-14deg); }
-  100% { transform: translateX(230%) skewX(-14deg); }
+  0% {
+    transform: translateX(-130%) skewX(-14deg);
+  }
+  16% {
+    transform: translateX(230%) skewX(-14deg);
+  }
+  100% {
+    transform: translateX(230%) skewX(-14deg);
+  }
 }
 
 @utility animate-entrance {
@@ -188,14 +203,20 @@
     );
     transform: translateX(-130%) skewX(-14deg);
     pointer-events: none;
-  }
 
-  &:hover::before {
-    animation: shine 0.8s ease-out;
+    /* Toca sozinho, em loop. Antes era `&:hover::before`, o que significava
+       que a animacao NUNCA rodava no celular — que e de onde vem quase todo o
+       trafego de uma pagina de bio. O --shine-delay desencontra os botoes. */
+    animation: shine 5s ease-out infinite;
+    animation-delay: var(--shine-delay, 0s);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-entrance { animation: none; }
-  .btn-link::before { display: none; }
+  .animate-entrance {
+    animation: none;
+  }
+  .btn-link::before {
+    display: none;
+  }
 }

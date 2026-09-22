@@ -46,13 +46,13 @@ function Index() {
         className="absolute inset-y-0 left-0 w-px bg-gradient-to-b from-transparent via-primary/50 to-transparent md:left-[calc(50%-25rem)]"
       />
 
-      <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pb-10 pt-3 sm:px-8 sm:pt-8 lg:grid lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14 lg:py-12">
+      <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 pb-10 pt-1 sm:px-8 sm:pt-8 lg:grid lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14 lg:py-12">
         <section className="animate-entrance flex flex-col items-center text-center lg:items-start lg:text-left">
-          <div className="mb-4 flex w-full max-w-sm justify-center lg:justify-start">
+          <div className="mb-2 flex w-full max-w-sm justify-center sm:mb-4 lg:justify-start">
             <img
               src={logoSrc}
               alt="Robson Iza — O Pai do Consórcio"
-              className="size-32 rounded-2xl border border-primary/30 bg-white object-contain p-2 shadow-xl shadow-primary/15 sm:size-36"
+              className="size-20 rounded-xl border border-primary/30 bg-white object-contain p-1.5 shadow-lg shadow-primary/15 sm:size-28 sm:rounded-2xl sm:p-2 lg:size-36"
             />
           </div>
           <div className="relative h-72 w-full max-w-sm overflow-hidden rounded-md border border-primary/25 bg-card sm:h-80 lg:h-[25rem]">
@@ -93,7 +93,13 @@ function Index() {
                   target="_blank"
                   rel="noreferrer"
                   className={`btn-link animate-entrance group flex min-h-28 items-center gap-4 rounded-md border p-4 transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${link.featured ? "border-primary bg-primary text-primary-foreground shadow-xl shadow-primary/20" : "border-border bg-surface-raised text-foreground hover:border-primary/70"}`}
-                  style={{ animationDelay: `${120 + index * 90}ms` }}
+                  style={
+                    {
+                      animationDelay: `${120 + index * 90}ms`,
+                      // Desencontra o brilho entre os botoes.
+                      "--shine-delay": `${1.2 + index * 0.9}s`,
+                    } as React.CSSProperties
+                  }
                 >
                   <span
                     className={`flex size-12 shrink-0 items-center justify-center rounded-full ${link.featured ? "bg-primary-foreground/15" : "bg-primary/15 text-brand-bright"}`}
